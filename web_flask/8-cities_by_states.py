@@ -17,7 +17,8 @@ def appcontext_teardown(self):
 @app.route('/cities_by_states', strict_slashes=False)
 def cities_states():
     """"Display a HTML page inside the tag BODY""""
-    return render_template('8-cities_by_states.html', states=storage.all(State))
+    states = storage.all("State").values()
+    return render_template('8-cities_by_states.html', states=states)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)

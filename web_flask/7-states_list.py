@@ -17,7 +17,8 @@ def appcontext_teardown(self):
 @app.route('/states_list', strict_slashes=False)
 def states():
     """Display a HTML page inside the tag BODY"""
-    return render_template('7-states_list.html', states=storage.all(State))
+    states = sorted(list(storage.all("State").values()), key=lambda x: x.name)
+    return render_template('7-states_list.html', states=states)
 
 
 if __name__ == '__main__':
