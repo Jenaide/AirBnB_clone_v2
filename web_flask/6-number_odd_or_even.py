@@ -39,7 +39,7 @@ def integer_n(n):
     """ROute that display n is an integer on an html page"""
     return render_template('5-number.html', n=n)
 
-@app.route('/number_odd_or_even/<int:n>', strict_slashes=False)
+@app.route('/airbnb-dynamic/number_odd_or_even/<int:n>', strict_slashes=False)
 def odd_or_even(n):
     """ROute that display n is an even|odd on an html page"""
     return render_template('6-number_odd_or_even.html', n=n)
